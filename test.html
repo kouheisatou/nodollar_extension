@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コードブロック $ 削除ツール テストページ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        h1, h2 {
+            color: #1e293b;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        code {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .example-section {
+            margin-bottom: 40px;
+        }
+
+        .note {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .language-bash {
+            background: #0f172a;
+            color: #22c55e;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            margin: 16px 0;
+        }
+
+        .highlight pre {
+            background: #2d3748;
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 コードブロック $ 削除ツール テストページ</h1>
+        <p>このページは Chrome拡張機能「コードブロック $ 削除ツール」のテスト用ページです。</p>
+        
+        <div class="note">
+            <strong>使用方法:</strong> Chrome拡張機能をインストールして、このページをリロードしてください。コードブロック内の行頭の「$」がシンプルに削除されます。
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="example-section">
+            <h2>例1: 基本的なpre要素</h2>
+            <p>シンプルなpre要素内のターミナルコマンド:</p>
+            <pre>$ npm install express
+$ npm start
+$ git clone https://github.com/example/repo.git
+$ cd repo
+$ npm run build</pre>
+        </div>
+
+        <div class="example-section">
+            <h2>例2: pre code要素</h2>
+            <p>pre code要素内のコマンド:</p>
+            <pre><code>$ sudo apt update
+$ sudo apt install nodejs npm
+$ node --version
+$ npm --version</code></pre>
+        </div>
+
+        <div class="example-section">
+            <h2>例3: language-bash クラス</h2>
+            <p>言語指定されたコードブロック:</p>
+            <div class="language-bash">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+$ nvm install node
+$ nvm use node</div>
+        </div>
+
+        <div class="example-section">
+            <h2>例4: highlight pre要素</h2>
+            <p>ハイライト用のクラスが付いたコードブロック:</p>
+            <div class="highlight">
+                <pre>$ docker build -t my-app .
+$ docker run -p 3000:3000 my-app
+$ docker ps
+$ docker stop $(docker ps -q)</pre>
+            </div>
+        </div>
+
+        <div class="example-section">
+            <h2>例5: インラインcode要素</h2>
+            <p>インライン要素: <code>$ ls -la</code> および <code>$ pwd</code></p>
+        </div>
+
+        <div class="example-section">
+            <h2>例6: 混在パターン</h2>
+            <p>$記号があるものとないものが混在:</p>
+            <pre>$ npm install
+console.log('Hello World');
+$ npm test
+function example() {
+    return true;
+}
+$ npm run build</pre>
+        </div>
+
+        <div class="example-section">
+            <h2>例7: $のみの行</h2>
+            <p>$だけの行も処理対象:</p>
+            <pre>$
+$ echo "start"
+$
+$ echo "middle" 
+$
+$ echo "end"</pre>
+        </div>
+
+        <div class="example-section">
+            <h2>例8: 通常のテキスト（処理対象外）</h2>
+            <p>以下は処理されません:</p>
+            <pre>function calculatePrice(item) {
+    return item.price * 1.1; // tax included
+}
+
+const total = items.reduce((sum, item) => sum + item.price, 0);</pre>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>📝 テスト手順</h2>
+        <ol>
+            <li>Chrome拡張機能をインストール</li>
+            <li>拡張機能が有効になっていることを確認</li>
+            <li>このページをリロード</li>
+            <li>上記のコードブロックから「$」が削除されることを確認</li>
+            <li>拡張機能アイコンから機能をオフにして、元のテキストが復元されることを確認</li>
+            <li>再度機能をオンにして、「$」が削除されることを確認</li>
+        </ol>
+    </div>
+</body>
+</html> 
